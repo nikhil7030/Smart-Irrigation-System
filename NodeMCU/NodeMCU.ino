@@ -1,6 +1,3 @@
-#include <ArduinoJson.h>
-
-
 /*************************************************************
   Download latest Blynk library here:
     https://github.com/blynkkk/blynk-library/releases/latest
@@ -16,7 +13,7 @@
     Follow us:                  http://www.fb.com/blynkapp
                                 http://twitter.com/blynk_app
 
-  Blynk library is licensed under MIT license
+  Blynk library is licensed under MITsssssssssss license
   This example code is in public domain.
 
  *************************************************************
@@ -43,6 +40,7 @@
 #include <BlynkSimpleEsp8266.h>
 //#include<DHT.h>
 #include <Arduino_JSON.h>
+#include <ArduinoJson.h>
 
 #define trigger D0
 #define echo D1
@@ -116,7 +114,11 @@ void sendvalues()
    value = analogRead(sense_Pin);   //Taking Analogue value
    value = value/10;    // Calculate The Percentage
    Serial.println(value);   
-   if(value<70)
+   if(temp <= 30 && temp >= 23 && value<40)
+   {
+      digitalWrite(r1, HIGH);   //Turn Motor On
+   }
+   else if(temp <= 40 && temp >= 30 && value<60)
    {
       digitalWrite(r1, HIGH);   //Turn Motor On
    }
@@ -153,7 +155,7 @@ void getWeatherData()     //API Call Method
     Serial.println("w.");
     repeatCounter++;
   }
-  while (client.connected() && client.available()) //
+  while (client.connected() && client.available()) //Checks Connection And Available Bytes
   {
     char c = client.read(); 
     if (c == '[' || c == ']') c = ' ';
