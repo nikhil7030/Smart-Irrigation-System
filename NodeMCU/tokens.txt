@@ -1,0 +1,4 @@
+Auth : d270e7c09e1c5d95f3edeed70fc5940b
+Api Token : d270e7c09e1c5d95f3edeed70fc5940b
+Api Call : Raw =	http://api.openweathermap.org/data/2.5/weather?q=panvel,IN&APPID=d270e7c09e1c5d95f3edeed70fc5940b
+	   C' = 	http://api.openweathermap.org/data/2.5/weather?q=panvel,IN&units=metric&APPID=d270e7c09e1c5d95f3edeed70fc5940b
